@@ -1,6 +1,5 @@
 import 'package:easyscan/unused/form.dart';
 import 'package:flutter/material.dart';
-import 'package:easyscan/constants.dart';
 import 'package:flutter/rendering.dart';
 
 class Login extends StatefulWidget {

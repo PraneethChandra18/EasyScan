@@ -1,3 +1,6 @@
+import 'package:easyscan/pages/details.dart';
+import 'package:easyscan/pages/home.dart';
+import 'package:easyscan/pages/view_pdf.dart';
 import 'package:easyscan/wrapper.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EasyScan',
       home: Wrapper(),
+      routes: {
+        '/details': (context) => Details(),
+        '/view_pdf': (context) => view_pdf(),
+      },
     );
   }
 }

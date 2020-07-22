@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:easyscan/constants.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:image_picker/image_picker.dart';
 
 class MultipleFloatingButton extends StatefulWidget {
   const MultipleFloatingButton({
     Key key,
-    @required this.size,
+    @required this.size,this.type
   }) : super(key: key);
 
   final Size size;
+  final String type;
 
   @override
   _MultipleFloatingButtonState createState() => _MultipleFloatingButtonState();
@@ -33,7 +34,16 @@ class _MultipleFloatingButtonState extends State<MultipleFloatingButton> {
         children: <Widget>[
           FloatingActionButton(
             onPressed: () async {
-              image = await captureImage();
+              image = await EdgeDetectedImage();
+//              if(widget.type=='new')
+//              {
+//                var sink = widget.file.openWrite(mode: FileMode.append);
+//                sink.write('\n');
+//                sink.write(image);
+//                await sink.flush();
+//                await sink.close();
+//              }
+              print(image);
             },
             foregroundColor: lightprimarycolor,
             backgroundColor: Colors.blue[800],
@@ -50,8 +60,8 @@ class _MultipleFloatingButtonState extends State<MultipleFloatingButton> {
 
           FloatingActionButton(
             onPressed: () async {
-              image = await importImage();
-
+              image = await pickImage(ImageSource.gallery);
+              print(image);
             },
             foregroundColor: lightprimarycolor,
             backgroundColor: Colors.blue[800],

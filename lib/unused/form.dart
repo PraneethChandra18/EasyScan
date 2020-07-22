@@ -1,4 +1,3 @@
-import 'package:easyscan/unused/login.dart';
 import 'package:flutter/material.dart';
 import 'package:easyscan/constants.dart';
 import 'package:flutter/rendering.dart';
